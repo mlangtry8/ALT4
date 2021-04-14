@@ -122,6 +122,15 @@ input.onButtonPressed(Button.B, function () {
 input.onPinPressed(TouchPin.P1, function () {
     stop()
 })
+input.onGesture(Gesture.Shake, function () {
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        `)
+})
 function fidget () {
     basic.showNumber(3)
     basic.showNumber(2)

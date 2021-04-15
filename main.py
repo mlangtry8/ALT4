@@ -30,6 +30,11 @@ def stop():
             . # . # .
             . . . . .
             """)
+
+def on_button_pressed_a():
+    basic.show_number(0)
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
 def alarm():
     radio.send_string("Good Morning!")
     basic.pause(1800000)
@@ -51,7 +56,7 @@ def alarm():
     basic.pause(10800000)
     radio.send_string("Sleep")
 # def on_button_pressed_a():
-    # basic.show_number(gatorParticle.heartbeat(HeartbeatType.BPM))
+# basic.show_number(gatorParticle.heartbeat(HeartbeatType.BPM))
 # input.on_button_pressed(Button.A, on_button_pressed_a)
 # Alarm
 
@@ -71,29 +76,11 @@ def breathing():
             . . . . .
             """)
         basic.pause(500)
-        basic.show_leds("""
-            . . . . .
-            . . # . .
-            . # . # .
-            . . # . .
-            . . . . .
-            """)
+        basic.show_icon(IconNames.SMALL_DIAMOND)
         basic.pause(500)
-        basic.show_leds("""
-            . . # . .
-            . # . # .
-            # . . . #
-            . # . # .
-            . . # . .
-            """)
+        basic.show_icon(IconNames.DIAMOND)
         basic.pause(2000)
-        basic.show_leds("""
-            . . . . .
-            . . # . .
-            . # . # .
-            . . # . .
-            . . . . .
-            """)
+        basic.show_icon(IconNames.SMALL_DIAMOND)
         basic.pause(500)
         basic.show_leds("""
             . . . . .

@@ -63,46 +63,28 @@ input.onPinPressed(TouchPin.P2, function () {
 // Breathing
 function breathing () {
     for (let index = 0; index < 7; index++) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showIcon(IconNames.SmallDiamond)
+        basic.pause(500)
+        basic.showIcon(IconNames.Diamond)
         basic.pause(2000)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
+        basic.showIcon(IconNames.SmallDiamond)
         basic.pause(500)
         basic.showLeds(`
             . . . . .
-            . . # . .
-            . # . # .
+            . . . . .
             . . # . .
             . . . . .
-            `)
-        basic.pause(500)
-        basic.showLeds(`
-            . . # . .
-            . # . # .
-            # . . . #
-            . # . # .
-            . . # . .
+            . . . . .
             `)
         basic.pause(2000)
-        basic.showLeds(`
-            . . . . .
-            . . # . .
-            . # . # .
-            . . # . .
-            . . . . .
-            `)
-        basic.pause(500)
-        basic.showLeds(`
-            . . . . .
-            . . . . .
-            . . # . .
-            . . . . .
-            . . . . .
-            `)
     }
     basic.clearScreen()
 }
@@ -121,15 +103,6 @@ input.onButtonPressed(Button.B, function () {
 // Fidget
 input.onPinPressed(TouchPin.P1, function () {
     stop()
-})
-input.onGesture(Gesture.Shake, function () {
-    basic.showLeds(`
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        . . . . .
-        `)
 })
 function fidget () {
     basic.showNumber(3)

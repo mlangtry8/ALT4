@@ -38,22 +38,30 @@ input.on_button_pressed(Button.A, on_button_pressed_a)
 def alarm():
     radio.send_string("Good Morning!")
     basic.pause(1800000)
+    music2()
     radio.send_string("Eat and Drink")
     basic.pause(5400000)
+    music2()
     radio.send_string("Drink")
     basic.pause(5400000)
+    music2()
     radio.send_string("Drink")
     basic.pause(5400000)
+    music2()
     radio.send_string("Eat and Drink")
     basic.pause(5400000)
+    music2()
     radio.send_string("Drink")
     basic.pause(9000000)
+    music2()
     radio.send_string("Eat and Drink")
     basic.pause(9000000)
+    music2()
     radio.send_string("Drink")
     basic.pause(9000000)
     radio.send_string("Drink")
     basic.pause(10800000)
+    music2()
     radio.send_string("Sleep")
 # def on_button_pressed_a():
 # basic.show_number(gatorParticle.heartbeat(HeartbeatType.BPM))
@@ -67,7 +75,6 @@ input.on_pin_pressed(TouchPin.P2, on_pin_pressed_p2)
 # Breathing
 def breathing():
     for index in range(7):
-        basic.pause(2000)
         basic.show_leds("""
             . . . . .
             . . . . .
@@ -89,6 +96,7 @@ def breathing():
             . . . . .
             . . . . .
             """)
+        basic.pause(2000)
     basic.clear_screen()
 
 def on_button_pressed_ab():
@@ -128,3 +136,9 @@ def fidget():
         led.stop_animation()
         basic.clear_screen()
         led.plot(randint(0, 4), randint(0, 4))
+# Music
+def music2():
+    music.play_melody("G - G - G - A - ", 250)
+    music.play_melody("- A - A B - G - ", 250)
+    music.play_melody("G - G - A - A - ", 250)
+    music.play_melody("A - G F - - - - ", 250)
